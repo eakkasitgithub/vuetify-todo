@@ -1,0 +1,19 @@
+{
+  "locale_name": "Español",
+  "titles": {
+    "dashboard": "Dashboard",
+    "my_projects": "Mis Proyectos",
+    "team": "Equipo"
+  },
+  "labels": {
+    "project_title": "Título del proyecto",
+    "person": "Persona",
+    "due_by": "Hasta",
+    "status": "Estado",
+    "sign_out": "Desconectarse",
+    "state": {
+      "in_progress": "En progreso",
+      "done": "Terminado"
+    }
+  }
+}

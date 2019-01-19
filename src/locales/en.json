@@ -1,0 +1,19 @@
+{
+  "locale_name": "English",
+  "titles": {
+    "dashboard": "Dashboard",
+    "my_projects": "My Projects",
+    "team": "Da Team"
+  },
+  "labels": {
+    "project_title": "Project Title",
+    "person": "Person",
+    "due_by": "Due by",
+    "status": "Status",
+    "sign_out": "Sign out",
+    "state": {
+      "in_progress": "In Progress",
+      "done": "Done"
+    }
+  }
+}
