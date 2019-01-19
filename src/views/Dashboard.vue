@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Dashboard</h1>
-    <v-container class="my-5">
+    <v-flex xs12 sm12 md12 my-4>
       <v-card flat class="pa-3">
         <v-layout row wrap>
           <v-flex xs12 md6>
@@ -22,7 +22,7 @@
           </v-flex>
         </v-layout>
       </v-card>
-    </v-container>
+    </v-flex>
   </div>
 </template>
 
