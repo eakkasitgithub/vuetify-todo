@@ -1,11 +1,11 @@
 <template>
   <nav>
-    <v-toolbar flat app>
-      <v-toolbar-side-icon class="grey--text" @click="showDrawer = !showDrawer">
+    <v-toolbar app>
+      <v-toolbar-side-icon @click="showDrawer = !showDrawer">
       </v-toolbar-side-icon>
-      <v-toolbar-title class="text-uppercase">
-        <span class="font-weight-light hidden-xs-only">Todo</span>
-        <span class="hidden-xs-only">App</span>
+      <v-toolbar-title class="text-uppercase mx-0">
+        <span class="font-weight-regular">TODO</span>
+        <span class="font-weight-bold">APP</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
@@ -18,7 +18,8 @@
             slot="activator"
             flat
           >
-            <span>{{ $t('locale_name') }}</span>
+            <span>{{ $t('locale_code') }}</span>
+            <v-icon right>public</v-icon>
           </v-btn>
           <v-list>
             <v-list-tile
@@ -26,7 +27,7 @@
               :key="index"
               @click="switchLocale(index)"
             >
-              <v-list-tile-title>{{ localeFullName(locale) }}</v-list-tile-title>
+              <v-list-tile-title class="body-1">{{ localeFullName(locale).toUpperCase() }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
@@ -36,18 +37,18 @@
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
-    <v-navigation-drawer v-model="showDrawer" class="orange darken-1" app>
+    <v-navigation-drawer v-model="showDrawer" class="grey darken-3" app>
       <v-list>
-        <v-list-tile class="hidden-sm-and-up white--text">
-          <span class="font-weight-light headline">Todo</span>
-          <span class="headline">App</span>
+        <v-list-tile class="hidden-lg-and-up white--text">
+          <span class="font-weight-regular headline">TODO</span>
+          <span class="font-weight-bold headline">APP</span>
         </v-list-tile>
         <v-list-tile v-for="link in links" :key="link.text" router :to="link.route">
           <v-list-tile-action>
             <v-icon class="white--text">{{ link.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title class="title font-weight-regular white--text">{{ linksText(link.text) }}</v-list-tile-title>
+            <v-list-tile-title class="title font-weight-regular white--text">{{ drawerText(link.text) }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile class="hidden-sm-and-up">
@@ -72,7 +73,7 @@ export default {
     localeFullName(locale) {
       return this.$i18n.messages[locale].locale_name
     },
-    linksText(text) {
+    drawerText(text) {
       return this.$i18n.messages[this.$locale].titles[text]
     }
   },
@@ -89,3 +90,8 @@ export default {
   }
 }
 </script>
+<style>
+nav {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+}
+</style>

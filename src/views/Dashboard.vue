@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h1>{{ $t('titles.dashboard') }}</h1>
+    <h1 class="my-4">{{ $t('titles.dashboard') }}</h1>
     <v-container fluid my-4 pa-0>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
       Quidem similique, repudiandae, ipsa facilis at possimus tempore sed,

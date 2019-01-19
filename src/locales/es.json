@@ -1,5 +1,6 @@
 {
   "locale_name": "Español",
+  "locale_code": "es",
   "titles": {
     "dashboard": "Dashboard",
     "my_projects": "Mis Proyectos",
@@ -10,7 +11,7 @@
     "person": "Persona",
     "due_by": "Hasta",
     "status": "Estado",
-    "sign_out": "Desconectarse",
+    "sign_out": "Salir",
     "state": {
       "in_progress": "En progreso",
       "done": "Terminado"

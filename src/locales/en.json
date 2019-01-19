@@ -1,5 +1,6 @@
 {
   "locale_name": "English",
+  "locale_code": "en",
   "titles": {
     "dashboard": "Dashboard",
     "my_projects": "My Projects",

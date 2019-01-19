@@ -21,3 +21,12 @@ export default {
   }
 }
 </script>
+
+<style>
+html {
+  overflow-y: auto;
+}
+.v-icon--right {
+  margin-left: 6px !important;
+}
+</style>
