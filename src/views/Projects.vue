@@ -42,13 +42,7 @@ export default {
       return this.$i18n.messages[this.$locale].labels.state[text]
     },
     stateIcon(state) {
-      let icon
-      if (state === 'in_progress') {
-        icon = 'timelapse'
-      } else {
-        icon = 'check_circle'
-      }
-      return icon
+      return state === 'in_progress' ? 'timelapse' : 'check_circle'
     }
   },
   data() {
