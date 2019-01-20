@@ -29,4 +29,11 @@ html {
 .v-icon--right {
   margin-left: 6px !important;
 }
+table.v-table thead tr th {
+  font-size: 16px;
+  color: #212121 !important;
+}
+table.v-table .column.sortable.active {
+  font-weight: 600;
+}
 </style>

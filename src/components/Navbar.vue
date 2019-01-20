@@ -27,7 +27,7 @@
               :key="index"
               @click="switchLocale(index)"
             >
-              <v-list-tile-title class="body-1">{{ localeFullName(locale).toUpperCase() }}</v-list-tile-title>
+              <v-list-tile-title class="body-1 text-uppercase">{{ localeFullName(locale) }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu>
