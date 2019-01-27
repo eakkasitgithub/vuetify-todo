@@ -24,7 +24,7 @@
       </v-card-text>
       <v-divider></v-divider>
       <v-card-text class="white--text mineshaft lighten-1">
-        &copy;{{ currentYear() }} — <strong class="mx-1">Em Torres R.</strong>
+        &copy;{{ currentYear() }} — <strong>Em Torres R.</strong>
       </v-card-text>
     </v-card>
   </v-footer>
