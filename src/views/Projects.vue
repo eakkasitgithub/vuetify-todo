@@ -3,6 +3,24 @@
     <!-- Fake info for now :P -->
     <h1 class="my-4">{{ $t('titles.my_projects') }}</h1>
     <v-container fluid my-4 pa-0>
+      <v-layout row class="mb-3">
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn fab small outline color="grey" class="ml-0 mr-2 mt-3" v-on="on" @click="sortBy('title')">
+              <v-icon>folder</v-icon>
+            </v-btn>
+          </template>
+          <span>Sort by project name</span>
+        </v-tooltip>
+        <v-tooltip top>
+          <template v-slot:activator="{ on }">
+            <v-btn fab small outline color="grey" class="mx-0 mt-3" v-on="on" @click="sortBy('person')">
+              <v-icon>person</v-icon>
+            </v-btn>
+          </template>
+          <span>Sort by person</span>
+        </v-tooltip>
+      </v-layout>
       <template>
         <v-data-table
           :items="projects"
@@ -46,15 +64,15 @@
       <v-card flat v-for="project in projects" :key="project.title">
         <v-layout row wrap :class="`pa-3 project ${ project.status }`">
           <v-flex xs12 md6>
-            <h3>{{ $t('labels.project_title') }}</h3>
+            <h4>{{ $t('labels.project_title') }}</h4>
             <div>{{ project.title }}</div>
           </v-flex>
           <v-flex xs6 sm4 md2>
-            <h3>{{ $t('labels.person') }}</h3>
+            <h4>{{ $t('labels.person') }}</h4>
             <div>{{ project.person }}</div>
           </v-flex>
           <v-flex xs6 sm4 md2>
-            <h3>{{ $t('labels.due_by') }}</h3>
+            <h4>{{ $t('labels.due_by') }}</h4>
             <div>{{ project.due }}</div>
           </v-flex>
           <v-flex xs12 sm4 md2>
@@ -87,7 +105,7 @@ export default {
     headerText(text) {
       return this.$i18n.messages[this.$locale].labels[text]
     },
-    changeSort (column, sortable) {
+    changeSort(column, sortable) {
       if (!sortable) { return }
       if (this.pagination.sortBy === column) {
         this.pagination.descending = !this.pagination.descending
@@ -95,6 +113,9 @@ export default {
         this.pagination.sortBy = column
         this.pagination.descending = false
       }
+    },
+    sortBy(prop) {
+      this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
     }
   },
   data() {

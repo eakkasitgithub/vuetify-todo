@@ -15,7 +15,7 @@
         <v-btn
           v-for="icon in icons"
           :key="icon.url"
-          class="mx-2 white--text"
+          class="mx-1 white--text"
           icon
           @click="socialNetworkUrl(icon.url)"
         >
@@ -52,8 +52,6 @@
     }
   }
 </script>
+
 <style>
-.social-card button:hover {
-  transform: scale(1.2) !important;
-}
 </style>

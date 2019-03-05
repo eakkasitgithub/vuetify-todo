@@ -39,6 +39,15 @@
     </v-toolbar>
     <v-navigation-drawer v-model="showDrawer" class="grey darken-3" app>
       <v-list>
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <img src="assets/avatars/emigdio.png">
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title class="title font-weight-regular white--text">Emigdio Torres R</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-divider></v-divider>
         <v-list-tile class="hidden-lg-and-up white--text">
           <span class="font-weight-regular headline">TODO</span>
           <span class="font-weight-bold headline">APP</span>
@@ -65,33 +74,34 @@
 </template>
 
 <script>
-export default {
-  methods: {
-    switchLocale(index) {
-      this.$locale = this.availableLocales[index]
+  export default {
+    methods: {
+      switchLocale(index) {
+        this.$locale = this.availableLocales[index]
+      },
+      localeFullName(locale) {
+        return this.$i18n.messages[locale].locale_name
+      },
+      drawerText(text) {
+        return this.$i18n.messages[this.$locale].titles[text]
+      }
     },
-    localeFullName(locale) {
-      return this.$i18n.messages[locale].locale_name
-    },
-    drawerText(text) {
-      return this.$i18n.messages[this.$locale].titles[text]
-    }
-  },
-  data() {
-    return {
-      showDrawer: false,
-      availableLocales: this.$available_locales,
-      links: [
-        { icon: 'dashboard', text: 'dashboard', route: '/' },
-        { icon: 'folder', text: 'my_projects', route: '/projects' },
-        { icon: 'person', text: 'team', route: '/team' }
-      ]
+    data() {
+      return {
+        showDrawer: false,
+        availableLocales: this.$available_locales,
+        links: [
+          { icon: 'dashboard', text: 'dashboard', route: '/' },
+          { icon: 'folder', text: 'my_projects', route: '/projects' },
+          { icon: 'person', text: 'team', route: '/team' }
+        ]
+      }
     }
   }
-}
 </script>
+
 <style>
-nav {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
-}
+  nav {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !important;
+  }
 </style>
